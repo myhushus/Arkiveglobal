@@ -35,7 +35,6 @@ a { color: inherit; text-decoration: none; }
 .site-nav { display: flex; align-items: center; gap: 28px; font-size: .92rem; }
 .site-nav a { color: #3b4350; }
 .site-nav a:hover { color: var(--text); }
-.nav-cta { border: 1px solid var(--text); padding: 10px 16px; }
 .menu-toggle { display: none; border: 0; background: transparent; font: inherit; }
 
 .hero { padding: 110px 0 90px; }
