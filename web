@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ARKIVE GLOBAL is an intellectual property holding and licensing company focused on global technology commercialization." />
+  <title>ARKIVE GLOBAL | Intellectual Property Licensing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="ARKIVE GLOBAL home">
+        <span class="brand-mark">A</span>
+        <span>ARKIVE GLOBAL</span>
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#scope">Technology</a>
+        <a href="#licensing">Licensing</a>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Technology IP Holding & Licensing</p>
+          <h1>Turning intellectual property into global opportunity.</h1>
+          <p class="hero-text">
+            ARKIVE GLOBAL develops, manages, and licenses innovative technologies across multiple industries. We work with qualified partners to bring intellectual property into real-world markets.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#licensing">Explore Licensing</a>
+            <a class="button secondary" href="#contact">Start a Conversation</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-hidden="true">
+          <div class="panel-card card-one">
+            <span>01</span>
+            <strong>Develop</strong>
+            <p>Identify and protect original technologies.</p>
+          </div>
+          <div class="panel-card card-two">
+            <span>02</span>
+            <strong>Structure</strong>
+            <p>Build clear territorial and field-based licensing models.</p>
+          </div>
+          <div class="panel-card card-three">
+            <span>03</span>
+            <strong>Commercialize</strong>
+            <p>Partner with capable operators around the world.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>Focused on ownership, licensing, and long-term value.</h2>
+        </div>
+        <div class="body-copy">
+          <p>
+            ARKIVE GLOBAL is an intellectual property company focused on the development, ownership, management, and licensing of technology assets.
+          </p>
+          <p>
+            Our role is to connect protected innovation with companies that have the manufacturing, distribution, market access, and operational capability to commercialize it effectively.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="scope" class="section section-muted">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Technology Scope</p>
+          <h2>A broad platform for diverse innovation.</h2>
+          <p>Our portfolio may span multiple industries and technology categories.</p>
+        </div>
+        <div class="cards-grid">
+          <article class="info-card"><span>01</span><h3>Software & Digital Platforms</h3><p>Applications, workflows, infrastructure, and connected digital services.</p></article>
+          <article class="info-card"><span>02</span><h3>Artificial Intelligence</h3><p>Practical systems, automation concepts, and intelligent user experiences.</p></article>
+          <article class="info-card"><span>03</span><h3>Mechanical Systems</h3><p>Product mechanisms, industrial improvements, and physical system design.</p></article>
+          <article class="info-card"><span>04</span><h3>Consumer Technology</h3><p>Devices, interfaces, mobile experiences, and everyday product innovation.</p></article>
+        </div>
+        <p class="disclosure-note">Detailed technical information is available upon request and, where appropriate, under a confidentiality agreement.</p>
+      </div>
+    </section>
+
+    <section id="licensing" class="section">
+      <div class="container licensing-grid">
+        <div>
+          <p class="eyebrow">Licensing</p>
+          <h2>Flexible structures for qualified partners.</h2>
+          <p class="lead">Licenses may be structured according to territory, field of use, exclusivity, performance obligations, and commercial scope.</p>
+        </div>
+        <div class="licensing-list">
+          <div><span>01</span><strong>Territory-Based Licensing</strong><p>Rights structured for defined national or regional markets.</p></div>
+          <div><span>02</span><strong>Exclusive or Non-Exclusive Rights</strong><p>Commercial arrangements aligned with capability and market commitment.</p></div>
+          <div><span>03</span><strong>Field-of-Use Licensing</strong><p>Rights limited to a specific product category, industry, or application.</p></div>
+          <div><span>04</span><strong>Performance-Based Exclusivity</strong><p>Exclusivity supported by milestones, minimum performance, and active commercialization.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement">
+      <div class="container">
+        <p>We seek practical, commercially capable partners who value innovation, responsible execution, and long-term collaboration.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Discuss a licensing opportunity.</h2>
+          <p>For partnership and licensing inquiries, contact ARKIVE GLOBAL.</p>
+        </div>
+        <div class="contact-card">
+          <p class="contact-label">Email</p>
+          <a href="mailto:contact@arkiveglobal.com">contact@arkiveglobal.com</a>
+          <p class="contact-note">Please include your company name, country, area of interest, and intended commercial market.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <strong>ARKIVE GLOBAL</strong>
+        <p>Technology IP Holding & Licensing</p>
+      </div>
+      <p>© <span id="year"></span> ARKIVE GLOBAL. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
