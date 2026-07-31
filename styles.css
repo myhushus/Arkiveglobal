@@ -144,6 +144,7 @@ html[lang="ko"] body {
 @media (min-width: 801px) {
   .nav-controls {
     order: 3;
+    margin-left: 28px;
   }
 
   .site-nav {
