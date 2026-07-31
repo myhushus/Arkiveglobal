@@ -110,3 +110,44 @@ h3 { font-size: 1.2rem; }
   .panel-card { position: static; width: 100%; }
   .footer-wrap { flex-direction: column; align-items: flex-start; }
 }
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.language-toggle {
+  min-width: 74px;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.language-toggle:hover,
+.language-toggle:focus-visible {
+  background: var(--surface);
+  border-color: var(--text);
+  outline: none;
+}
+
+html[lang="ko"] body {
+  word-break: keep-all;
+}
+
+@media (min-width: 801px) {
+  .nav-controls {
+    order: 3;
+  }
+
+  .site-nav {
+    margin-left: auto;
+  }
+}
