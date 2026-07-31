@@ -176,14 +176,34 @@ function applyLanguage(language) {
   setText('.site-footer div > p', t.footerTagline);
   setText('.footer-wrap > p', `© ${new Date().getFullYear()} ARKIVE GLOBAL. ${t.rights}`);
 
-  localStorage.setItem('arkiveglobal-language', lang);
+  try {
+    localStorage.setItem('arkiveglobal-language', lang);
+  } catch (error) {
+    // Some file previews and privacy-restricted browsers block storage.
+    // Language switching must continue to work without persistence.
+  }
 }
 
-const savedLanguage = localStorage.getItem('arkiveglobal-language');
-const initialLanguage = savedLanguage || (navigator.language.toLowerCase().startsWith('ko') ? 'ko' : 'en');
+
+let savedLanguage = null;
+try {
+  savedLanguage = localStorage.getItem('arkiveglobal-language');
+} catch (error) {
+  // Storage is optional.
+}
+
+const browserLanguages = Array.isArray(navigator.languages) && navigator.languages.length
+  ? navigator.languages
+  : [navigator.language || 'en'];
+const browserUsesKorean = browserLanguages.some((language) =>
+  String(language).toLowerCase().startsWith('ko')
+);
+const initialLanguage = savedLanguage || (browserUsesKorean ? 'ko' : 'en');
 applyLanguage(initialLanguage);
 
-year.textContent = new Date().getFullYear();
+if (year && year.isConnected) {
+  year.textContent = new Date().getFullYear();
+}
 
 languageButton.addEventListener('click', () => {
   applyLanguage(document.documentElement.lang === 'ko' ? 'en' : 'ko');
