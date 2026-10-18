@@ -19,4 +19,4 @@ No detail pages are currently published. To add one:
 
 ## Email and privacy
 
-Contact links encode only inquiry subjects, never visitor information. No on-site form exists. Do not promise a response deadline without operator agreement. The operator must confirm retention, provider and any required entity/contact disclosures before production release. Any future form or analytics feature requires updating both privacy pages based on actual processing.
+Contact links encode only inquiry subjects, never visitor information. No on-site form exists. Do not promise a response deadline without operator agreement. The owner has confirmed that licensing@arkiveglobal.com is not operated for now. Keep its address and links, disclose the limitation, and do not perform delivery tests, change DNS or introduce email services. This is not a release blocker. Confirm any applicable entity disclosures using actual operator information. Provider, retention and inquiry-processing procedures are needed only if a real contact channel is introduced. Any future form or analytics feature requires updating both privacy pages based on actual processing.

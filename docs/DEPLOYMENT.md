@@ -1,38 +1,75 @@
 # Deployment and recovery runbook
 
-## Current baseline
+## Baseline and scope
 
 - Repository: https://github.com/myhushus/Arkiveglobal
-- Baseline: `91a68d2bcaa9e42aace2a28a5176858a720e3f08` (2026-08-01).
-- Existing successful workflow: https://github.com/myhushus/Arkiveglobal/actions/runs/30683777963
-- Observed pipeline: dynamic Pages Jekyll build, upload and deploy.
-- CNAME: arkiveglobal.com. DNS provider and current Pages settings were not changed.
-- Development: local `codex/arkive-bilingual-rebuild`, no push, merge or deployment performed.
+- Preserved production main: `91a68d2bcaa9e42aace2a28a5176858a720e3f08`.
+- Development branch: `codex/arkive-bilingual-rebuild`.
+- Latest observed production run: https://github.com/myhushus/Arkiveglobal/actions/runs/30683777963 (dynamic Pages build and deployment, successful).
+- Current live root matches the preserved original; HTTPS returns 200 and HTTP redirects to HTTPS with 301.
+- No main merge, remote push, Pages setting change, DNS change or production deployment has been performed by this work.
 
-## Release gate
+## Accepted email limitation
 
-1. Obtain explicit approval for publishing and the exact reviewed commit.
-2. Operator confirms the current public business description and new explanatory wording; privacy owner confirms email provider, retention and applicable mandatory disclosures. Do not invent missing legal company details.
-3. Verify licensing@arkiveglobal.com receives messages with an operator-authorized email test. UI link checks do not prove mailbox delivery.
-4. Record current DNS, custom domain, HTTPS settings and GitHub Pages source before changing anything. Preserve Search Console baseline if available.
-5. Retain the previous production artifact or generate a rollback artifact from the baseline commit, containing index.html, styles.css, script.js, assets/ and CNAME. Preserve its checksum and keep it outside the new dist artifact.
-6. Run `npm ci`, `npm run check`, `npm run build`, `npm test`. Inspect screenshots and review approved content. Local preview is not a security or legal certification.
-7. After explicit approval, push/review the development branch. Before any approved main merge, coordinate the existing Pages publishing source: the old branch-based publisher can react to main changes. Switch to GitHub Actions only within the approved launch window, preserving custom domain and HTTPS settings.
-8. Merge the approved commit into main. Run `Approved production deployment` manually on main with exact input `DEPLOY ARKIVE GLOBAL`. Configure an environment reviewer for `github-pages` when available. No push-trigger deployment is defined.
-9. Verify artifact serves CNAME, .nojekyll, all 12 language URLs, root legacy anchors, sitemap, robots, 404 and images. Verify HTTP status, TLS, mail links, canonical and hreflang on the real domain.
-10. Submit sitemap in existing Search Console property and monitor errors and search changes. No DNS or MX change is required for the proposed same-host rebuild.
+The owner confirmed on 2026-10-18 that `licensing@arkiveglobal.com` is not operated for now. Keep its address and mailto links. Email inactivity is **not a release blocker or a rollback trigger**. Do not create accounts, add services, change MX/SPF/DKIM/DMARC, or run send/receive/reply tests. Link checks prove only the destination, not receipt. Contact and Privacy disclose the limitation; no form or successful-receipt UI exists.
 
-## URL strategy
+## Before separately approved publication
 
-- `/`: substantive compatibility home, canonical to `/en/`; no JS or meta-refresh redirect.
-- Original `/#top`, `/#about`, `/#scope`, `/#licensing`, `/#contact` remain actual DOM targets. Fragments cannot be individually redirected by the server.
-- `/en/` and `/ko/` are canonical language pages. Every core page has reciprocal alternate-language links and x-default to its English equivalent.
-- Sitemap includes canonical language URLs only, not duplicate root or 404.
-- Unknown paths receive 404. Do not route every unknown URL to home.
-- Existing `/index.html` should continue serving the root document; verify on GitHub Pages after release.
+1. Approve the exact final development commit and public content. Confirm any mandatory corporate notices using real entity/jurisdiction information; do not invent missing facts or inactive email processing procedures.
+2. Record Settings → Pages source, custom domain `arkiveglobal.com`, Enforce HTTPS and environment/Actions permissions. Settings access was not verified; the connector could not retrieve the Pages endpoint. Remote main reported no branch protection. Review approval controls with the owner.
+3. Record the current production SHA again. If it differs from the pinned baseline, stop and prepare a rollback artifact for the actual current release before publishing. Preserve DNS and domain settings; no DNS changes are planned.
+4. Prepare and retain an independent original-site artifact and manifest. Run these local commands from the repository:
 
-## Rollback
+```sh
+npm ci
+npm run check
+npm run build
+npm test
+node scripts/prepare-rollback.mjs
+git status --short
+```
 
-If core navigation, email access or page delivery fails, restore the previously approved Pages artifact through an authorized release; keep the same domain. If returning to the old branch publisher, restore the baseline content in a recovery branch and review before changing main/source settings. Do not force-reset main or overwrite unrelated work. Record rollback SHA and verify root anchors, DNS/TLS and mailbox access. An immediate rollback can make new language URLs disappear; decide whether to retain compatibility files based on the actual incident and crawl state.
+The rollback helper writes `.artifacts/rollback/` and `.artifacts/rollback-manifest.json`, verifies all 11 original files byte for byte, adds `.nojekyll`, and rejects unexpected files. It changes no Git refs. All build/test outputs are ignored by Git.
 
-GitHub Actions execution, DNS/TLS behavior and production headers remain unverified until the approved deployment. This project has no mechanism to set arbitrary HTTP security headers on GitHub Pages; hosting controls must be reviewed separately. No server-side secrets exist in this build.
+## Publish only after explicit push, merge and production approval
+
+The following are **future execution instructions**, not actions performed in this task.
+
+1. Push the reviewed development branch only after approval, open/review its comparison to main, and merge the exact approved changes. Do not force-push. Recheck remote main first; reconcile later changes rather than overwriting them.
+2. Before the approved merge, switch the existing branch-based Pages publisher to GitHub Actions within the launch window; otherwise main updates can trigger the old publisher. Preserve Custom domain and Enforce HTTPS. A CNAME file alone does not configure an Actions site's domain.
+3. With the workflow present on main, launch the manual workflow using GitHub UI, or the following command if GitHub CLI is installed and authenticated:
+
+```sh
+gh workflow run deploy.yml --repo myhushus/Arkiveglobal --ref main -f confirmation='DEPLOY ARKIVE GLOBAL'
+gh run list --repo myhushus/Arkiveglobal --workflow deploy.yml --limit 1
+```
+
+4. Inspect the selected run and its exact head SHA; wait for both build and deploy success. Configure a `github-pages` environment reviewer where available. Both workflows are manual-only, require main and an exact confirmation phrase, and share the `pages` concurrency group. Use only one release/rollback run at a time; do not queue overlapping runs.
+5. On the real domain, verify `/`, `/index.html`, the five root anchors, all 12 language pages, images, unknown-path 404, sitemap/robots, canonical/hreflang and HTTPS. Verify email href values only; do not test mailbox delivery. Submit the sitemap in the existing Search Console property if available and monitor errors.
+
+## URL compatibility
+
+- `/`: real English compatibility home, canonical `/en/`; no JavaScript or meta-refresh redirect.
+- `/#top`, `/#about`, `/#scope`, `/#licensing`, `/#contact`: actual targets retained; fixed-header visibility tested.
+- `/ko/` and `/en/`: six canonical pages each, reciprocal alternate-language links and corresponding-page language switch.
+- Sitemap contains canonical language pages only. Unknown paths return 404. `/index.html` remains a root alias.
+- `dist/CNAME` is `arkiveglobal.com`; `.nojekyll` is present. Deploy only `dist/`, never the full checkout.
+
+## Rollback after explicit approval
+
+Use rollback for a new regression in page delivery or navigation. Known email inactivity does not qualify. If a release is currently building, cancel/wait for that specific release before running rollback so an older queued build cannot overwrite the restored site. Verify the rollback run completes last.
+
+With rollback.yml present on main and the original baseline still appropriate:
+
+```sh
+gh workflow run rollback.yml --repo myhushus/Arkiveglobal --ref main -f confirmation='ROLLBACK ARKIVE GLOBAL'
+gh run list --repo myhushus/Arkiveglobal --workflow rollback.yml --limit 1
+```
+
+The workflow reads the pinned original commit, uploads its verified artifact and deploys through the same Pages environment. It does not reset main or change DNS. Verify the root, original images, original anchors and HTTPS afterward. **Exact-baseline rollback removes the new /ko/ and /en/ pages (404)**; accept this recovery tradeoff before release. A different recovery artifact retaining new URLs requires separate review.
+
+Keep the original artifact outside GitHub Actions too. If Actions is unavailable, an authorized operator can prepare a recovery branch from the correct baseline and review a return to branch publishing; do not force-reset main or overwrite unrelated work.
+
+## Verification limits
+
+Local build/browser checks, rollback byte integrity and a local new→old→new HTTP rehearsal passed. GitHub Actions permissions/execution, new production language routes, CDN timing and actual production rollback remain untested until separately approved execution. The current site's HTTPS response is verified; Settings checkboxes are not. GitHub Pages cannot apply arbitrary HTTP response security headers from this source tree.

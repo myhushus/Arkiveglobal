@@ -189,7 +189,7 @@ export const en = {
     emailLabel: 'Email our team',
     emailAction: 'Open email',
     emailNote:
-      'Opens your email application. Your message is sent only when you send it from that application.',
+      'This email address is currently not monitored and cannot receive inquiries. The link opens your email application; it does not confirm delivery or receipt.',
     types: [
       [
         'Licensing inquiry',
@@ -235,7 +235,7 @@ export const en = {
       ],
       [
         'Email inquiries',
-        'Email links open your email application. This website does not receive or store the message. If you send an email, its content and sender information are handled through the email services involved in delivery and receipt. Include only the information needed for your business inquiry.',
+        'Email links open your email application. This website does not receive or store messages. licensing@arkiveglobal.com is currently not operated and cannot receive inquiries. Its address and links are retained; delivery and receipt are not confirmed. Please do not send personal information or confidential material.',
       ],
       [
         'Hosting',
@@ -243,7 +243,7 @@ export const en = {
       ],
       [
         'Questions about information handling',
-        'For questions about an email you have sent, including a request concerning your information, contact licensing@arkiveglobal.com. You can also ask about the retention and service arrangements that apply to your inquiry.',
+        'The listed address, licensing@arkiveglobal.com, is currently not operated and cannot receive requests. This website provides no on-site data submission function. Information about any future inquiry processing will be updated when an operational contact channel is available.',
       ],
     ],
     providerLink: 'GitHub General Privacy Statement',

@@ -59,9 +59,13 @@ Saved full-page desktop/mobile captures for all 12 core pages, plus home viewpor
 - No deployment, remote branch push, main merge, DNS change or real email submission performed.
 - Browser tests use Chromium/Chrome. Actual iOS Safari, Android devices, foldable hinges and native OS font settings were not separately tested. Width-based reflow is tested; physical device certification is not claimed.
 - Automated accessibility passes and accessible-tree inspection are not a complete WCAG conformance audit. Full VoiceOver/NVDA user-flow review remains advisable.
-- Mailbox delivery, email provider/retention and operator-specific legal disclosures need operator confirmation before publishing.
+- Owner update (2026-10-18): licensing@arkiveglobal.com is not operated for now. This accepted limitation is not a release blocker. Keep links; do not change DNS, introduce email services or run delivery tests. Contact and Privacy now disclose the inactive channel. Entity-specific mandatory notices still require actual operator facts; do not invent email-processing procedures.
 - No individual technology details are public because no approved records were supplied. The template is implemented/type-checked but not verified with real approved technical content.
-- GitHub Actions, live HTTP status/headers/TLS, Search Console and real-user Core Web Vitals remain release-stage verification items.
+- Current live HTTPS 200 and HTTP→HTTPS 301 were rechecked during finalization. GitHub Actions execution, new language routes on production, Pages Settings, Search Console and real-user Core Web Vitals remain release-stage items.
 - Privacy is a website behavior notice, not a claim of comprehensive jurisdictional legal compliance.
 
 See DEPLOYMENT.md for the approval gate, Pages source transition and rollback steps.
+
+## Finalization update
+
+Final `npm run check`, `npm run build` and all 12 Playwright tests passed after the inactive-email copy correction. The original-file rollback helper passed. Generated outputs remain ignored, original source/assets are unchanged, and only reviewed source/docs/workflow/test files are checkpointed on the development branch. See PREFLIGHT-2026-10-18.md for the current release decision; it supersedes earlier email launch requirements.

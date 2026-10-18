@@ -36,7 +36,7 @@ The original root HTML/CSS/JS and `assets/` are left intact. Copies of the origi
 
 ## Content and privacy
 
-No individual technologies, patent counts, clients or contract claims were invented. Email links do not submit messages. There is no fake form, analytics, third-party font request, cookie or language storage. The Privacy page describes verifiable website behavior; email provider, retention and operator-specific legal requirements still need operator confirmation before launch.
+No individual technologies, patent counts, clients or contract claims were invented. Email links do not submit messages. There is no fake form, analytics, third-party font request, cookie or language storage. The Privacy page describes verifiable website behavior; the retained licensing@arkiveglobal.com address is currently not operated and does not receive inquiries. Email inactivity is an owner-accepted limitation, not a release blocker. Entity-specific mandatory disclosures remain subject to operator confirmation; no fictitious email processing procedures are defined.
 
 ## Deployment
 
