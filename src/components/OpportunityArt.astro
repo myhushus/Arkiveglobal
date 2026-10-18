@@ -1,0 +1,21 @@
+---
+import { content, type Lang } from '../content';
+const { lang } = Astro.props as { lang: Lang };
+const t = content[lang];
+---
+<figure class="opportunity-art" aria-label={t.home.note}>
+  <svg viewBox="0 0 560 540" fill="none" aria-hidden="true">
+    <defs><linearGradient id="plane" x1="90" y1="80" x2="400" y2="460" gradientUnits="userSpaceOnUse"><stop stop-color="#d5e3eb" stop-opacity=".9"/><stop offset="1" stop-color="#7395a8" stop-opacity=".15"/></linearGradient></defs>
+    <g stroke="#8ca4b5" stroke-opacity=".23"><path d="m0 150 560 320M0 250l510 290M40 0l520 300M0 350l330 190M0 50l560 320M150 0l410 235M0 150 260 0M0 250 433 0M0 350 560 27M0 450 560 127M20 540l540-313M195 540l365-213M365 540l195-113"/></g>
+    <path d="m125 288 160-93 160 93-160 93-160-93Z" fill="#183d54" stroke="#5f8da4"/>
+    <path d="M125 288v30l160 93 160-93v-30l-160 93-160-93Z" fill="#0c253a" stroke="#5f8da4"/>
+    <path d="m125 205 160-93 160 93-160 93-160-93Z" fill="url(#plane)" stroke="#dbe9ee"/>
+    <path d="M125 205v28l160 93 160-93v-28l-160 93-160-93Z" fill="#618497" fill-opacity=".4" stroke="#c0d5df"/>
+    <path d="m125 122 160-93 160 93-160 93-160-93Z" fill="url(#plane)" stroke="#dbe9ee"/>
+    <path d="M125 122v27l160 93 160-93v-27l-160 93-160-93Z" fill="#92adba" fill-opacity=".35" stroke="#dbe9ee"/>
+    <path d="M285 242v56m0 28v55" stroke="#b8d5df" stroke-dasharray="3 5"/>
+    <path d="M285 411v38H86M445 205h52M125 122H67" stroke="#9bb8c6"/>
+    <circle cx="67" cy="122" r="4" fill="#c7b68e"/><circle cx="497" cy="205" r="4" fill="#c7b68e"/><circle cx="86" cy="449" r="4" fill="#c7b68e"/>
+  </svg>
+  <figcaption><span>01 — 03</span><span>{t.home.note}</span></figcaption>
+</figure>

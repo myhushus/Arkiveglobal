@@ -1,0 +1,9 @@
+---
+import {content, href, type Lang} from '../content';
+import Arrow from './Arrow.astro';
+const { lang, id } = Astro.props as { lang: Lang; id?: string };
+const t = content[lang];
+---
+<section class="cta-section" id={id}>
+  <div class="container cta-inner"><div><p class="eyebrow">{t.cta.eyebrow}</p><h2 class="linebreak">{t.cta.title}</h2><p>{t.cta.text}</p></div><a class="button light" href={href(lang,'contact')}>{t.contact}<Arrow/></a></div>
+</section>

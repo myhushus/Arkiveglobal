@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import {content, href, slugs, site, type Lang, type Page} from '../content';
+import Arrow from '../components/Arrow.astro';
+interface Props { lang: Lang; page?: Page; title?: string; description?: string; canonicalPath?: string; alternatePath?: string; noindex?: boolean; }
+const {lang,page='',title,description,canonicalPath,alternatePath,noindex=false} = Astro.props;
+const t=content[lang]; const other=lang==='en'?'ko':'en';
+const index=slugs.indexOf(page); const pathname=canonicalPath||href(lang,page);
+const canonical=new URL(pathname,site).href;
+const alt=alternatePath||href(other,page);
+const titleText=`${title||t.meta[index][0]} | ARKIVE GLOBAL`;
+const descriptionText=description||t.meta[index][1];
+const schemas=[{'@context':'https://schema.org','@type':'Organization','@id':`${site}/#organization`,name:'ARKIVE GLOBAL',url:site,logo:`${site}/assets/arkive-global-logo.png`,email:'licensing@arkiveglobal.com'},...(page?[{'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:t.nav[0],item:new URL(href(lang),site).href},{'@type':'ListItem',position:2,name:title||t.nav[index],item:canonical}]}]:[])];
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content={descriptionText}/><meta name="theme-color" content="#102738"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<title>{titleText}</title><link rel="canonical" href={canonical}/>
+{noindex ? <meta name="robots" content="noindex,follow"/> : <><link rel="alternate" hreflang={lang} href={canonical}/><link rel="alternate" hreflang={other} href={new URL(alt,site).href}/><link rel="alternate" hreflang="x-default" href={lang==='en'?canonical:new URL(alt,site).href}/></>}
+<meta property="og:type" content="website"/><meta property="og:site_name" content="ARKIVE GLOBAL"/><meta property="og:title" content={titleText}/><meta property="og:description" content={descriptionText}/><meta property="og:url" content={canonical}/><meta property="og:locale" content={lang==='ko'?'ko_KR':'en_US'}/><meta property="og:locale:alternate" content={lang==='ko'?'en_US':'ko_KR'}/><meta property="og:image" content={`${site}/assets/social-${lang}.png`}/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image:alt" content="ARKIVE GLOBAL — Technology IP holding & licensing"/><meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png"/><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
+<script type="application/ld+json" set:html={JSON.stringify(schemas).replace(/</g,'\\u003c')}/>
+</head>
+<body>
+<a class="skip-link" href="#main">{t.skip}</a>
+<header class="site-header" id="top"><div class="container header-inner">
+<a class="brand" href={href(lang)} aria-label={`ARKIVE GLOBAL — ${t.nav[0]}`}><img src="/assets/mark.webp" width="58" height="36" alt=""/><span>ARKIVE GLOBAL</span></a>
+<nav class="desktop-nav" aria-label={lang==='ko'?'주 메뉴':'Main navigation'}>{slugs.slice(1,5).map((p,i)=><a href={href(lang,p)} aria-current={page===p?'page':undefined}>{t.nav[i+1]}</a>)}</nav>
+<div class="header-tools"><a class="language-link" href={alt} lang={other} hreflang={other} aria-label={t.langLabel}>{t.language}<span aria-hidden="true">↗</span></a><details class="mobile-menu"><summary aria-label={t.menu}><span>{t.menu}</span><span class="menu-icon" aria-hidden="true"></span></summary><nav aria-label={lang==='ko'?'모바일 메뉴':'Mobile navigation'}>{slugs.slice(0,5).map((p,i)=><a href={href(lang,p)} aria-current={page===p?'page':undefined}>{t.nav[i]}<Arrow/></a>)}</nav></details></div>
+</div></header>
+<main id="main" tabindex="-1"><slot/></main>
+<footer class="site-footer"><div class="container"><div class="footer-main"><div><a class="brand footer-brand" href={href(lang)}>ARKIVE GLOBAL</a><p>{t.footer}</p></div><nav aria-label={lang==='ko'?'하단 메뉴':'Footer navigation'}>{slugs.slice(1).map((p,i)=><a href={href(lang,p)}>{t.nav[i+1]}</a>)}</nav></div><div class="footer-bottom"><span>© {new Date().getFullYear()} ARKIVE GLOBAL. {t.rights}</span><a href="#top">{t.top} ↑</a></div></div></footer>
+<script>
+const menus = document.querySelectorAll<HTMLDetailsElement>('.mobile-menu');
+menus.forEach(menu=>{document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu.open){menu.open=false;menu.querySelector('summary')?.focus();}});document.addEventListener('click',event=>{if(menu.open&&event.target instanceof Node&&!menu.contains(event.target)) menu.open=false;});menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.open=false;}));});
+</script>
+</body></html>
