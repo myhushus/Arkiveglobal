@@ -1,10 +1,51 @@
 ---
-interface Props { kind: string; }
+interface Props {
+  kind: string;
+}
 const { kind } = Astro.props;
 ---
+
 <svg class="field-art" viewBox="0 0 240 160" fill="none" aria-hidden="true">
-  {kind === 'software' && <g stroke="currentColor"><path d="m120 25 80 45-80 45-80-45 80-45Z"/><path d="m40 88 80 45 80-45M40 106l80 45 80-45M80 48l80 45M160 48 80 93"/><circle cx="120" cy="70" r="5" fill="currentColor"/></g>}
-  {kind === 'intelligence' && <g stroke="currentColor"><circle cx="120" cy="80" r="48"/><circle cx="120" cy="80" r="27"/><path d="M120 16v37m0 54v37M56 80h37m54 0h37M75 35l26 26m38 38 26 26M75 125l26-26m38-38 26-26"/>{[[120,16],[120,144],[56,80],[184,80],[75,35],[165,125],[75,125],[165,35]].map(([cx,cy])=><circle cx={cx} cy={cy} r="4" fill="currentColor"/>)}</g>}
-  {kind === 'mechanical' && <g stroke="currentColor"><circle cx="104" cy="80" r="50"/><circle cx="104" cy="80" r="26"/><circle cx="104" cy="80" r="7"/><path d="M104 15v26m0 78v26M39 80h26m78 0h26M58 34l18 18m56 56 18 18M58 126l18-18m56-56 18-18M169 51h27v58h-27"/></g>}
-  {kind === 'consumer' && <g stroke="currentColor"><rect x="82" y="20" width="76" height="120" rx="13"/><path d="M107 30h26M110 129h20M52 56a40 40 0 0 0 0 48M188 56a40 40 0 0 1 0 48M64 66a24 24 0 0 0 0 28M176 66a24 24 0 0 1 0 28"/><circle cx="120" cy="78" r="21"/><path d="m110 78 7 7 14-15"/></g>}
+  {kind === 'software' && (
+    <g stroke="currentColor">
+      <path d="m120 25 80 45-80 45-80-45 80-45Z" />
+      <path d="m40 88 80 45 80-45M40 106l80 45 80-45M80 48l80 45M160 48 80 93" />
+      <circle cx="120" cy="70" r="5" fill="currentColor" />
+    </g>
+  )}
+  {kind === 'intelligence' && (
+    <g stroke="currentColor">
+      <circle cx="120" cy="80" r="48" />
+      <circle cx="120" cy="80" r="27" />
+      <path d="M120 16v37m0 54v37M56 80h37m54 0h37M75 35l26 26m38 38 26 26M75 125l26-26m38-38 26-26" />
+      {[
+        [120, 16],
+        [120, 144],
+        [56, 80],
+        [184, 80],
+        [75, 35],
+        [165, 125],
+        [75, 125],
+        [165, 35],
+      ].map(([cx, cy]) => (
+        <circle cx={cx} cy={cy} r="4" fill="currentColor" />
+      ))}
+    </g>
+  )}
+  {kind === 'mechanical' && (
+    <g stroke="currentColor">
+      <circle cx="104" cy="80" r="50" />
+      <circle cx="104" cy="80" r="26" />
+      <circle cx="104" cy="80" r="7" />
+      <path d="M104 15v26m0 78v26M39 80h26m78 0h26M58 34l18 18m56 56 18 18M58 126l18-18m56-56 18-18M169 51h27v58h-27" />
+    </g>
+  )}
+  {kind === 'consumer' && (
+    <g stroke="currentColor">
+      <rect x="82" y="20" width="76" height="120" rx="13" />
+      <path d="M107 30h26M110 129h20M52 56a40 40 0 0 0 0 48M188 56a40 40 0 0 1 0 48M64 66a24 24 0 0 0 0 28M176 66a24 24 0 0 1 0 28" />
+      <circle cx="120" cy="78" r="21" />
+      <path d="m110 78 7 7 14-15" />
+    </g>
+  )}
 </svg>

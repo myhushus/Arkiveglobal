@@ -1,7 +1,47 @@
 ---
-import Base from './Base.astro';import CTA from '../components/CTA.astro';import {content,href,type Lang} from '../content';import type {Technology} from '../content/technologies';
-interface Props {lang:Lang;technology:Technology;}
-const {lang,technology}=Astro.props;const t=technology.translations[lang];const other=lang==='en'?'ko':'en';
-const labels=lang==='ko'?['해결하려는 문제','적용 분야','권리 정보','정보 공개 범위']:['The problem','Application','Rights information','Disclosure'];
+import Base from './Base.astro';
+import CTA from '../components/CTA.astro';
+import { content, href, type Lang } from '../content';
+import type { Technology } from '../content/technologies';
+interface Props {
+  lang: Lang;
+  technology: Technology;
+}
+const { lang, technology } = Astro.props;
+const t = technology.translations[lang];
+const other = lang === 'en' ? 'ko' : 'en';
+const labels =
+  lang === 'ko'
+    ? ['해결하려는 문제', '적용 분야', '권리 정보', '정보 공개 범위']
+    : ['The problem', 'Application', 'Rights information', 'Disclosure'];
 ---
-<Base lang={lang} page="technology" title={t.title} description={t.summary} canonicalPath={href(lang,`technology/${technology.slug}`)} alternatePath={href(other,`technology/${technology.slug}`)}><section class="page-hero"><div class="container"><a class="text-link" href={href(lang,'technology')}>← {content[lang].back}</a><h1>{t.title}</h1><p class="page-lead">{t.summary}</p></div></section><section class="section"><div class="container policy">{[t.problem,t.application,t.rights,t.disclosure].map((text,i)=><section><h2>{labels[i]}</h2><p>{text}</p></section>)}</div></section><CTA lang={lang}/></Base>
+
+<Base
+  lang={lang}
+  page="technology"
+  title={t.title}
+  description={t.summary}
+  canonicalPath={href(lang, `technology/${technology.slug}`)}
+  alternatePath={href(other, `technology/${technology.slug}`)}
+>
+  <section class="page-hero">
+    <div class="container">
+      <a class="text-link" href={href(lang, 'technology')}>
+        ← {content[lang].back}
+      </a>
+      <h1>{t.title}</h1>
+      <p class="page-lead">{t.summary}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container policy">
+      {[t.problem, t.application, t.rights, t.disclosure].map((text, i) => (
+        <section>
+          <h2>{labels[i]}</h2>
+          <p>{text}</p>
+        </section>
+      ))}
+    </div>
+  </section>
+  <CTA lang={lang} />
+</Base>

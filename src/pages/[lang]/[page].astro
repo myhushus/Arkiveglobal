@@ -1,6 +1,15 @@
 ---
-import Base from '../../layouts/Base.astro';import PageContent from '../../components/PageContent.astro';import {languages,slugs,type Lang,type Page} from '../../content';
-export function getStaticPaths(){return languages.flatMap(lang=>slugs.filter(Boolean).map(page=>({params:{lang,page}})));}
-const {lang,page}=Astro.params as {lang:Lang,page:Page};
+import Base from '../../layouts/Base.astro';
+import PageContent from '../../components/PageContent.astro';
+import { languages, slugs, type Lang, type Page } from '../../content';
+export function getStaticPaths() {
+  return languages.flatMap((lang) =>
+    slugs.filter(Boolean).map((page) => ({ params: { lang, page } })),
+  );
+}
+const { lang, page } = Astro.params as { lang: Lang; page: Page };
 ---
-<Base lang={lang} page={page}><PageContent lang={lang} page={page}/></Base>
+
+<Base lang={lang} page={page}>
+  <PageContent lang={lang} page={page} />
+</Base>

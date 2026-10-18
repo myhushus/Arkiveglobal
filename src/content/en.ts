@@ -1,28 +1,266 @@
 export const en = {
   nav: ['Home', 'About', 'Technology', 'Licensing', 'Contact', 'Privacy'],
-  skip: 'Skip to content', menu: 'Menu', close: 'Close menu', language: '한국어', langLabel: 'Read this page in Korean',
-  tagline: 'Technology IP holding & licensing', contact: 'Discuss an opportunity', explore: 'Explore our approach', more: 'Learn more', back: 'All technology fields',
+  skip: 'Skip to content',
+  menu: 'Menu',
+  close: 'Close menu',
+  language: '한국어',
+  langLabel: '한국어 — 이 페이지를 한국어로 읽기',
+  tagline: 'Technology IP holding & licensing',
+  contact: 'Discuss an opportunity',
+  explore: 'Explore our approach',
+  more: 'Learn more',
+  back: 'All technology fields',
   meta: [
-    ['Technology IP & Licensing', 'ARKIVE GLOBAL develops, manages and licenses technology assets. Explore our technology fields and approach to global commercialization.'],
-    ['About', 'Learn about ARKIVE GLOBAL’s role in technology asset development, ownership, management and licensing.'],
-    ['Technology', 'Explore ARKIVE GLOBAL’s technology scope: software, artificial intelligence, mechanical systems and consumer technology.'],
-    ['Licensing', 'Explore territory, field-of-use and exclusivity structures, and how to start a licensing discussion with ARKIVE GLOBAL.'],
-    ['Contact', 'Contact ARKIVE GLOBAL at licensing@arkiveglobal.com for technology licensing and business inquiries.'],
-    ['Privacy', 'Information about this website, email inquiries, browser storage and GitHub Pages hosting.']
+    [
+      'Technology IP & Licensing',
+      'ARKIVE GLOBAL develops, manages and licenses technology assets. Explore our technology fields and approach to global commercialization.',
+    ],
+    [
+      'About',
+      'Learn about ARKIVE GLOBAL’s role in technology asset development, ownership, management and licensing.',
+    ],
+    [
+      'Technology',
+      'Explore ARKIVE GLOBAL’s technology scope: software, artificial intelligence, mechanical systems and consumer technology.',
+    ],
+    [
+      'Licensing',
+      'Explore territory, field-of-use and exclusivity structures, and how to start a licensing discussion with ARKIVE GLOBAL.',
+    ],
+    [
+      'Contact',
+      'Contact ARKIVE GLOBAL at licensing@arkiveglobal.com for technology licensing and business inquiries.',
+    ],
+    [
+      'Privacy',
+      'Information about this website, email inquiries, browser storage and GitHub Pages hosting.',
+    ],
   ],
-  home: { eyebrow: 'Ideas protected. Opportunities opened.', title: ['Intellectual property.', 'Global possibility.'], intro: 'We develop, manage and license technology assets—connecting protected innovation with the partners who can bring it to market.', primary: 'Explore licensing', secondary: 'Discover our technology fields', note: 'From technology to commercial opportunity', aboutTitle: 'The connection between innovation and its next chapter.', aboutText: 'ARKIVE GLOBAL is an intellectual property company focused on the development, ownership, management and licensing of technology assets.', aboutLink: 'Get to know ARKIVE GLOBAL', scopeTitle: 'A broad view of technology.', scopeText: 'Our scope spans different disciplines. Explore the fields that inform our approach to technology and commercialization.', licenseTitle: 'The right structure.\nA shared direction.', licenseText: 'Territory, application and commercial capability shape every licensing conversation. We consider structures that support responsible, long-term commercialization.', licenseLink: 'How licensing works' },
-  process: [['Develop', 'Identify and protect original technologies.'], ['Structure', 'Shape licensing around territory, application and commercial scope.'], ['Commercialize', 'Connect innovation with capable partners.']],
+  home: {
+    eyebrow: 'Ideas protected. Opportunities opened.',
+    title: ['Intellectual property.', 'Global possibility.'],
+    intro:
+      'We develop, manage and license technology assets—connecting protected innovation with the partners who can bring it to market.',
+    primary: 'Explore licensing',
+    secondary: 'Discover our technology fields',
+    note: 'From technology to commercial opportunity',
+    aboutTitle: 'The connection between innovation and its next chapter.',
+    aboutText:
+      'ARKIVE GLOBAL is an intellectual property company focused on the development, ownership, management and licensing of technology assets.',
+    aboutLink: 'Get to know ARKIVE GLOBAL',
+    scopeTitle: 'A broad view of technology.',
+    scopeText:
+      'Our scope spans different disciplines. Explore the fields that inform our approach to technology and commercialization.',
+    licenseTitle: 'The right structure.\nA shared direction.',
+    licenseText:
+      'Territory, application and commercial capability shape every licensing conversation. We consider structures that support responsible, long-term commercialization.',
+    licenseLink: 'How licensing works',
+  },
+  process: [
+    ['Develop', 'Identify and protect original technologies.'],
+    [
+      'Structure',
+      'Shape licensing around territory, application and commercial scope.',
+    ],
+    ['Commercialize', 'Connect innovation with capable partners.'],
+  ],
   fields: [
-    ['Software & digital platforms', 'Applications, workflows, infrastructure and connected digital services.', 'software'],
-    ['Artificial intelligence', 'Practical systems, automation concepts and intelligent user experiences.', 'intelligence'],
-    ['Mechanical systems', 'Product mechanisms, industrial improvements and physical system design.', 'mechanical'],
-    ['Consumer technology', 'Devices, interfaces, mobile experiences and everyday product innovation.', 'consumer']
+    [
+      'Software & digital platforms',
+      'Applications, workflows, infrastructure and connected digital services.',
+      'software',
+    ],
+    [
+      'Artificial intelligence',
+      'Practical systems, automation concepts and intelligent user experiences.',
+      'intelligence',
+    ],
+    [
+      'Mechanical systems',
+      'Product mechanisms, industrial improvements and physical system design.',
+      'mechanical',
+    ],
+    [
+      'Consumer technology',
+      'Devices, interfaces, mobile experiences and everyday product innovation.',
+      'consumer',
+    ],
   ],
-  about: { eyebrow: 'About ARKIVE GLOBAL', title: 'Built around the value\nof intellectual property.', lead: 'Our role is to connect protected innovation with the manufacturing, distribution, market access and operating capability needed to commercialize it.', label: 'Our role', heading: 'Technology assets.\nLong-term perspective.', body: 'We focus on the development, ownership, management and licensing of technology assets. This brings the protection of innovation and the practical demands of commercialization into the same conversation.', valuesTitle: 'Principles for collaboration.', values: [['Innovation with purpose', 'Consider where a technology can address a practical need.'], ['Responsible execution', 'Align the scope of a collaboration with a partner’s capability.'], ['Long-term value', 'Build a shared understanding of rights, responsibilities and commercial objectives.']] },
-  technology: { eyebrow: 'Technology scope', title: 'Different disciplines.\nA common ambition.', lead: 'Technology becomes an opportunity when its application is clear. Our scope provides a starting point for exploring where innovation and commercial capability can meet.', note: 'These are areas of technology interest, not a list of granted patents or technologies available for license.', detailTitle: 'Start with the application.', detailText: 'Tell us what you want to build, the market you intend to serve and the capability you bring. Detailed technical information can be discussed on request and, where appropriate, under a confidentiality agreement.', detailLink: 'Discuss a technology field', portfolio: 'Technology portfolio', publicNote: 'Individual technology profiles will be published when information is approved for public release.' },
-  licensing: { eyebrow: 'Licensing', title: 'A framework for\nwhat comes next.', lead: 'Licenses may be structured around territory, field of use, exclusivity, performance obligations and commercial scope.', structuresTitle: 'A considered approach to rights.', structures: [['Territory-based licensing', 'Rights structured for defined national or regional markets.'], ['Exclusive or non-exclusive rights', 'Commercial arrangements aligned with capability and market commitment.'], ['Field-of-use licensing', 'Rights limited to a specific product category, industry or application.'], ['Performance-based exclusivity', 'Exclusivity supported by milestones, minimum performance and active commercialization.']], stepsTitle: 'A clear starting point.', stepsIntro: 'A guide to an initial discussion. The scope and sequence depend on the opportunity.', steps: [['Introduce your opportunity', 'Share your company, technology interest and intended market.'], ['Explore the fit', 'Discuss the application, commercial scope and information needed for evaluation.'], ['Agree the next steps', 'Consider confidentiality arrangements where appropriate, then discuss technical and commercial details.']], faqTitle: 'Before we talk.', faqs: [['What should I include in my inquiry?', 'Your company name, country, area of interest and intended commercial market help establish the context. A short, non-confidential overview is enough to begin.'], ['Can I request technical information?', 'Yes. Detailed information is available on request and, where appropriate, under a confidentiality agreement. The information that can be shared depends on the technology and the inquiry.'], ['Is an exclusive license possible?', 'Exclusivity is one of the structures that may be considered. Territory, application, capability and performance obligations would need to be discussed. No rights are granted by submitting an inquiry.'], ['Should I send confidential material?', 'Please do not include confidential technical material in an initial email. Discuss suitable confidentiality arrangements and a sharing method first.']] },
-  contactPage: { eyebrow: 'Contact', title: 'Every opportunity\nstarts with a conversation.', lead: 'For technology licensing and business inquiries, write to ARKIVE GLOBAL. A clear introduction helps us understand the opportunity.', emailLabel: 'Email our team', emailAction: 'Open email', emailNote: 'Opens your email application. Your message is sent only when you send it from that application.', types: [['Licensing inquiry', 'For an application, territory or licensing structure you would like to discuss.', 'Licensing inquiry'], ['Technology inquiry', 'For questions about a technology field or the availability of further information.', 'Technology inquiry'], ['Business inquiry', 'For other business and collaboration discussions.', 'Business inquiry']], prepareTitle: 'A useful introduction includes', prepare: ['Company name and country', 'Technology field or application of interest', 'Intended commercial market', 'A brief, non-confidential description of your plans'], safety: 'Keep your first message non-confidential. Please do not send sensitive personal information or confidential technical documents.', privacyLink: 'How inquiries and website data are handled', fallback: 'If an email application does not open, copy the address into your preferred email service.' },
-  privacy: { eyebrow: 'Privacy', title: 'A straightforward approach\nto website data.', lead: 'This notice describes the website features and inquiry channel available here. It does not assume details about email retention or internal systems that have not been confirmed.', sections: [['Browsing this website', 'This is a static website hosted on GitHub Pages. It does not include an on-site inquiry form, account registration, analytics scripts or advertising trackers. Fonts and visual assets are served with the site.'], ['Cookies and browser storage', 'The website does not set its own cookies or save language preferences in browser storage. Language is selected through the /en/ and /ko/ page addresses.'], ['Email inquiries', 'Email links open your email application. This website does not receive or store the message. If you send an email, its content and sender information are handled through the email services involved in delivery and receipt. Include only the information needed for your business inquiry.'], ['Hosting', 'GitHub may process technical information when serving this site, including IP addresses, as described in its privacy documentation. Website code does not control the hosting provider’s logs.'], ['Questions about information handling', 'For questions about an email you have sent, including a request concerning your information, contact licensing@arkiveglobal.com. Specific retention periods, email service arrangements and jurisdiction-specific obligations require confirmation by the website operator.']], providerLink: 'GitHub General Privacy Statement', updated: 'Website notice · 18 October 2026' },
-  cta: { eyebrow: 'Let’s explore the fit', title: 'Where could your\nnext opportunity begin?', text: 'Bring your technology interests and commercial perspective. Let’s start a focused conversation.' },
-  footer: 'Connecting intellectual property with global opportunity.', rights: 'All rights reserved.', fieldsLabel: 'Technology fields', rolesLabel: 'Our approach', top: 'Back to top', notFound: ['Page not found.', 'The address may have changed. Explore the site in your preferred language.']
+  about: {
+    eyebrow: 'About ARKIVE GLOBAL',
+    title: 'Built around the value\nof intellectual property.',
+    lead: 'Our role is to connect protected innovation with the manufacturing, distribution, market access and operating capability needed to commercialize it.',
+    label: 'Our role',
+    heading: 'Technology assets.\nLong-term perspective.',
+    body: 'We focus on the development, ownership, management and licensing of technology assets. This brings the protection of innovation and the practical demands of commercialization into the same conversation.',
+    valuesTitle: 'Principles for collaboration.',
+    values: [
+      [
+        'Innovation with purpose',
+        'Consider where a technology can address a practical need.',
+      ],
+      [
+        'Responsible execution',
+        'Align the scope of a collaboration with a partner’s capability.',
+      ],
+      [
+        'Long-term value',
+        'Build a shared understanding of rights, responsibilities and commercial objectives.',
+      ],
+    ],
+  },
+  technology: {
+    eyebrow: 'Technology scope',
+    title: 'Different disciplines.\nA common ambition.',
+    lead: 'Technology becomes an opportunity when its application is clear. Our scope provides a starting point for exploring where innovation and commercial capability can meet.',
+    note: 'These are areas of technology interest, not a list of granted patents or technologies available for license.',
+    detailTitle: 'Start with the application.',
+    detailText:
+      'Tell us what you want to build, the market you intend to serve and the capability you bring. Detailed technical information can be discussed on request and, where appropriate, under a confidentiality agreement.',
+    detailLink: 'Discuss a technology field',
+    portfolio: 'Technology portfolio',
+    publicNote:
+      'Individual technology profiles will be published when information is approved for public release.',
+  },
+  licensing: {
+    eyebrow: 'Licensing',
+    title: 'A framework for\nwhat comes next.',
+    lead: 'Licenses may be structured around territory, field of use, exclusivity, performance obligations and commercial scope.',
+    structuresTitle: 'A considered approach to rights.',
+    structures: [
+      [
+        'Territory-based licensing',
+        'Rights structured for defined national or regional markets.',
+      ],
+      [
+        'Exclusive or non-exclusive rights',
+        'Commercial arrangements aligned with capability and market commitment.',
+      ],
+      [
+        'Field-of-use licensing',
+        'Rights limited to a specific product category, industry or application.',
+      ],
+      [
+        'Performance-based exclusivity',
+        'Exclusivity supported by milestones, minimum performance and active commercialization.',
+      ],
+    ],
+    stepsTitle: 'A clear starting point.',
+    stepsIntro:
+      'A guide to an initial discussion. The scope and sequence depend on the opportunity.',
+    steps: [
+      [
+        'Introduce your opportunity',
+        'Share your company, technology interest and intended market.',
+      ],
+      [
+        'Explore the fit',
+        'Discuss the application, commercial scope and information needed for evaluation.',
+      ],
+      [
+        'Agree the next steps',
+        'Consider confidentiality arrangements where appropriate, then discuss technical and commercial details.',
+      ],
+    ],
+    faqTitle: 'Before we talk.',
+    faqs: [
+      [
+        'What should I include in my inquiry?',
+        'Your company name, country, area of interest and intended commercial market help establish the context. A short, non-confidential overview is enough to begin.',
+      ],
+      [
+        'Can I request technical information?',
+        'Yes. Detailed information is available on request and, where appropriate, under a confidentiality agreement. The information that can be shared depends on the technology and the inquiry.',
+      ],
+      [
+        'Is an exclusive license possible?',
+        'Exclusivity is one of the structures that may be considered. Territory, application, capability and performance obligations would need to be discussed. No rights are granted by submitting an inquiry.',
+      ],
+      [
+        'Should I send confidential material?',
+        'Please do not include confidential technical material in an initial email. Discuss suitable confidentiality arrangements and a sharing method first.',
+      ],
+    ],
+  },
+  contactPage: {
+    eyebrow: 'Contact',
+    title: 'Every opportunity\nstarts with a conversation.',
+    lead: 'For technology licensing and business inquiries, write to ARKIVE GLOBAL. A clear introduction helps us understand the opportunity.',
+    emailLabel: 'Email our team',
+    emailAction: 'Open email',
+    emailNote:
+      'Opens your email application. Your message is sent only when you send it from that application.',
+    types: [
+      [
+        'Licensing inquiry',
+        'For an application, territory or licensing structure you would like to discuss.',
+        'Licensing inquiry',
+      ],
+      [
+        'Technology inquiry',
+        'For questions about a technology field or the availability of further information.',
+        'Technology inquiry',
+      ],
+      [
+        'Business inquiry',
+        'For other business and collaboration discussions.',
+        'Business inquiry',
+      ],
+    ],
+    prepareTitle: 'A useful introduction includes',
+    prepare: [
+      'Company name and country',
+      'Technology field or application of interest',
+      'Intended commercial market',
+      'A brief, non-confidential description of your plans',
+    ],
+    safety:
+      'Keep your first message non-confidential. Please do not send sensitive personal information or confidential technical documents.',
+    privacyLink: 'How inquiries and website data are handled',
+    fallback:
+      'If an email application does not open, copy the address into your preferred email service.',
+  },
+  privacy: {
+    eyebrow: 'Privacy',
+    title: 'A straightforward approach\nto website data.',
+    lead: 'Learn how this website works and what to consider when contacting us by email.',
+    sections: [
+      [
+        'Browsing this website',
+        'This is a static website hosted on GitHub Pages. It does not include an on-site inquiry form, account registration, analytics scripts or advertising trackers. Fonts and visual assets are served with the site.',
+      ],
+      [
+        'Cookies and browser storage',
+        'The website does not set its own cookies or save language preferences in browser storage. Language is selected through the /en/ and /ko/ page addresses.',
+      ],
+      [
+        'Email inquiries',
+        'Email links open your email application. This website does not receive or store the message. If you send an email, its content and sender information are handled through the email services involved in delivery and receipt. Include only the information needed for your business inquiry.',
+      ],
+      [
+        'Hosting',
+        'GitHub may process technical information when serving this site, including IP addresses, as described in its privacy documentation. Website code does not control the hosting provider’s logs.',
+      ],
+      [
+        'Questions about information handling',
+        'For questions about an email you have sent, including a request concerning your information, contact licensing@arkiveglobal.com. You can also ask about the retention and service arrangements that apply to your inquiry.',
+      ],
+    ],
+    providerLink: 'GitHub General Privacy Statement',
+    updated: 'Website notice · 18 October 2026',
+  },
+  cta: {
+    eyebrow: 'Let’s explore the fit',
+    title: 'Where could your\nnext opportunity begin?',
+    text: 'Bring your technology interests and commercial perspective. Let’s start a focused conversation.',
+  },
+  footer: 'Connecting intellectual property with global opportunity.',
+  rights: 'All rights reserved.',
+  fieldsLabel: 'Technology fields',
+  rolesLabel: 'Our approach',
+  top: 'Back to top',
+  notFound: [
+    'Page not found.',
+    'The address may have changed. Explore the site in your preferred language.',
+  ],
 };

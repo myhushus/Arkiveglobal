@@ -1,14 +1,115 @@
 ---
-import {content, href, type Lang} from '../content';
+import { content, href, type Lang } from '../content';
 import Arrow from './Arrow.astro';
 import CTA from './CTA.astro';
 import FieldArt from './FieldArt.astro';
 import OpportunityArt from './OpportunityArt.astro';
-const {lang}=Astro.props as {lang:Lang};const t=content[lang];
+const { lang } = Astro.props as { lang: Lang };
+const t = content[lang];
 ---
-<section class="home-hero"><div class="container hero-grid"><div class="hero-copy"><p class="eyebrow"><span class="small-rule"></span>{t.tagline}</p><h1>{t.home.title[0]}<br/><span>{t.home.title[1]}</span></h1><p class="hero-intro">{t.home.intro}</p><div class="actions"><a class="button light" href={href(lang,'licensing')}>{t.home.primary}<Arrow/></a><a class="text-link on-dark" href={href(lang,'technology')}>{t.home.secondary}<Arrow/></a></div></div><OpportunityArt lang={lang}/></div><div class="hero-bottom container"><span>{t.home.eyebrow}</span><span aria-hidden="true">SCROLL TO EXPLORE ↓</span></div></section>
-<section class="process-strip" aria-label={t.rolesLabel}><div class="container process-grid">{t.process.map(([title,text],i)=><div><span class="number">0{i+1}</span><div><h2>{title}</h2><p>{text}</p></div></div>)}</div></section>
-<section class="section" id="about"><div class="container editorial-grid"><p class="eyebrow">01 / {t.nav[1]}</p><div><h2 class="linebreak">{t.home.aboutTitle}</h2><p class="large-copy">{t.home.aboutText}</p><a class="text-link" href={href(lang,'about')}>{t.home.aboutLink}<Arrow/></a></div></div></section>
-<section class="section pale" id="scope"><div class="container"><div class="section-heading"><div><p class="eyebrow">02 / {t.fieldsLabel}</p><h2>{t.home.scopeTitle}</h2></div><p>{t.home.scopeText}</p></div><div class="fields-grid">{t.fields.map(([title,text,kind],i)=><a class="field-card" href={`${href(lang,'technology')}#${kind}`}><div class="field-top"><span class="number">0{i+1}</span><Arrow/></div><FieldArt kind={kind}/><h3>{title}</h3><p>{text}</p></a>)}</div><p class="disclosure">{t.technology.note}</p></div></section>
-<section class="section" id="licensing"><div class="container licensing-feature"><div><p class="eyebrow">03 / {t.nav[3]}</p><h2 class="linebreak">{t.home.licenseTitle}</h2><p class="large-copy">{t.home.licenseText}</p><a class="text-link" href={href(lang,'licensing')}>{t.home.licenseLink}<Arrow/></a></div><div class="rights-list">{t.licensing.structures.map(([title],i)=><div><span class="number">0{i+1}</span><h3>{title}</h3><span aria-hidden="true">↗</span></div>)}</div></div></section>
-<CTA lang={lang} id="contact"/>
+
+<section class="home-hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">
+        <span class="small-rule"></span>
+        {t.tagline}
+      </p>
+      <h1>
+        {t.home.title[0]}
+        <br />
+        <span>{t.home.title[1]}</span>
+      </h1>
+      <p class="hero-intro">{t.home.intro}</p>
+      <div class="actions">
+        <a class="button light" href={href(lang, 'licensing')}>
+          {t.home.primary}
+          <Arrow />
+        </a>
+        <a class="text-link on-dark" href={href(lang, 'technology')}>
+          {t.home.secondary}
+          <Arrow />
+        </a>
+      </div>
+    </div>
+    <OpportunityArt lang={lang} />
+  </div>
+  <div class="hero-bottom container">
+    <span>{t.home.eyebrow}</span>
+    <span aria-hidden="true">SCROLL TO EXPLORE ↓</span>
+  </div>
+</section>
+<section class="process-strip" aria-label={t.rolesLabel}>
+  <div class="container process-grid">
+    {t.process.map(([title, text], i) => (
+      <div>
+        <span class="number">0{i + 1}</span>
+        <div>
+          <h2>{title}</h2>
+          <p>{text}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+<section class="section" id="about">
+  <div class="container editorial-grid">
+    <p class="eyebrow">01 / {t.nav[1]}</p>
+    <div>
+      <h2 class="linebreak">{t.home.aboutTitle}</h2>
+      <p class="large-copy">{t.home.aboutText}</p>
+      <a class="text-link" href={href(lang, 'about')}>
+        {t.home.aboutLink}
+        <Arrow />
+      </a>
+    </div>
+  </div>
+</section>
+<section class="section pale" id="scope">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">02 / {t.fieldsLabel}</p>
+        <h2>{t.home.scopeTitle}</h2>
+      </div>
+      <p>{t.home.scopeText}</p>
+    </div>
+    <div class="fields-grid">
+      {t.fields.map(([title, text, kind], i) => (
+        <a class="field-card" href={`${href(lang, 'technology')}#${kind}`}>
+          <div class="field-top">
+            <span class="number">0{i + 1}</span>
+            <Arrow />
+          </div>
+          <FieldArt kind={kind} />
+          <h3>{title}</h3>
+          <p>{text}</p>
+        </a>
+      ))}
+    </div>
+    <p class="disclosure">{t.technology.note}</p>
+  </div>
+</section>
+<section class="section" id="licensing">
+  <div class="container licensing-feature">
+    <div>
+      <p class="eyebrow">03 / {t.nav[3]}</p>
+      <h2 class="linebreak">{t.home.licenseTitle}</h2>
+      <p class="large-copy">{t.home.licenseText}</p>
+      <a class="text-link" href={href(lang, 'licensing')}>
+        {t.home.licenseLink}
+        <Arrow />
+      </a>
+    </div>
+    <div class="rights-list">
+      {t.licensing.structures.map(([title], i) => (
+        <div>
+          <span class="number">0{i + 1}</span>
+          <h3>{title}</h3>
+          <span aria-hidden="true">↗</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+<CTA lang={lang} id="contact" />
